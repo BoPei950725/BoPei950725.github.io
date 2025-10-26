@@ -40,15 +40,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             case 'profile':
                 output = `
-                    <p><strong>Patrick / 劉柏霈</strong></p>
-                    <p><strong>標語:</strong> "這是一句您用來形容自己的話 (Slogan)"</p>
+                    <p><strong>Patrick / 劉柏霈(波沛)</strong></p>
+                    <p><strong>Slogan:</strong> ""</p>
                     <p><strong>自我介紹:</strong></p>
-                    <p>我是一名資訊管理系的學生，對資料庫設計和網頁開發充滿熱情。
-                       個性細心、樂於學習新技術，並致力於解決實際問題... (請修改成您自己的介紹)</p>
-                    <p><strong>興趣:</strong> 攝影、網路開發</p>
+                    <p></p>
+                    <p><strong>興趣:</strong>p>
                     <p><strong>個人照片:</strong> 
-                        <a href="image/profile.jpg" target="_blank">[點此查看 profile.jpg]</a> 
-                        (請將您的照片命名為 profile.jpg 並放入 image 資料夾)
+                        <a href="image/profile.jpg" target="_blank">[點此查看]</a> 
                     </p>
                 `;
                 break;
@@ -75,13 +73,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 output = `    
                     <p><strong>1. 專案名稱: 個人履歷網站 (本專案)</strong></p>
                     <p>  - <strong>課程:</strong> 多媒體程式設計</p>
-                    <p>  - <strong>描述:</strong> 為了滿足期中專案需求，從零開始設計並實作的一個互動式履歷網站。
-                         挑戰在於不使用任何模板，並使用 JavaScript 實現終端機的互動效果，
+                    <p>  - <strong>描述:</strong> 從零開始設計並實作的一個互動式履歷網站。
+                         使用 JavaScript 實現終端機的互動效果，
                          以展現獨特的技術感。</p>
                     <p>  - <strong>佐證:</strong> 
                         <a href="https://github.com/your-username/your-repo" target="_blank">[GitHub 儲存庫]</a> 
-                        <a href="image/project1.png" target="_blank">[查看設計稿.png]</a> 
-                        (請將截圖放入 image 資料夾)
+                        <a href="image/project1.png" target="_blank">[查看設計稿]</a> 
                     </p>
                 `;
                 break;
