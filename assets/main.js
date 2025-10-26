@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 output = `
                     <p><strong>Patrick / 劉柏霈(波沛)</strong></p>
                     <p><strong>Slogan:</strong> ""</p>
-                    <p><strong>自我介紹:</strong></p>
+                    <p><strong>自我介紹: </strong></p>
                     <p></p>
                     <p><strong>興趣:</strong>p>
                     <p><strong>個人照片:</strong> 
