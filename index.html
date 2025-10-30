@@ -3,57 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patrick - 履歷</title>
+    <title>Macintosh OS Resume made by BoPei</title>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main class="terminal">
+
+    <div class="mac-menu-bar">
+        <span>File</span> <span>Edit</span> <span>View</span> <span>Special</span>
+    </div>
+
+    <input type="checkbox" id="toggle-about" class="hidden-toggle" checked>
+    <div class="mac-window" id="window-about">
+        <div class="window-title-bar"><label for="toggle-about" class="window-close-box"></label>About_Me.txt</div>
+        <div class="window-content">
+            <img src="https://via.placeholder.com/80" alt="頭像" class="profile-pic-inline">
+            <h2>個人基本資訊</h2>
+            <p><strong>姓名:</strong> [您的姓名]</p>
+            <p><strong>學校:</strong> [您的學校]</p>
+            <p><strong>自我介紹:</strong> [您的自我介紹...]</p>
+        </div>
+    </div>
+
+    <input type="checkbox" id="toggle-skills" class="hidden-toggle" checked>
+    <div class="mac-window" id="window-skills">
+        <div class="window-title-bar"><label for="toggle-skills" class="window-close-box"></label>Skills.app</div>
+        <div class="window-content">
+            <h2>程式能力</h2>
+            <div class="skill-item">
+                <span class="skill-name">Java</span>
+                <div class="progress-bar"><div class="progress-fill" id="fill-java"></div></div>
+            </div>
+            <div class="skill-item">
+                <span class="skill-name">Python</span>
+                <div class="progress-bar"><div class="progress-fill" id="fill-python"></div></div>
+            </div>
+            <div class="skill-item">
+                <span class="skill-name">C</span>
+                <div class="progress-bar"><div class="progress-fill" id="fill-c"></div></div>
+            </div>
+            <div class="skill-item">
+                <span class="skill-name">HTML/CSS</span>
+                <div class="progress-bar"><div class="progress-fill" id="fill-html"></div></div>
+            </div>
+        </div>
+    </div>
+    
+    <input type="checkbox" id="toggle-photo" class="hidden-toggle" checked>
+    <div class="mac-window" id="window-photo">
+        <div class="window-title-bar"><label for="toggle-photo" class="window-close-box"></label>Photography.folder</div>
+        <div class="window-content">
+            <h2>攝影社幹部經歷</h2>
+            <div class="exp-item">
+                <img src="https://via.placeholder.com/120x90" alt="經歷圖片">
+                <p>[攝影社 描述]</p>
+            </div>
+        </div>
+    </div>
+    
+    <input type="checkbox" id="toggle-contact" class="hidden-toggle" checked>
+    <div class="mac-window" id="window-contact">
+        <div class="window-title-bar"><label for="toggle-contact" class="window-close-box"></label>Contact.app</div>
+        <div class="window-content">
+            <h2>聯絡我</h2>
+            <p>Email: <a href="mailto:950725bopei@gmail.com">950725bopei@gmail.com</a></p>
+            <p>GitHub: <a href="https://bopei950725.github.io" target="_blank">https://bopei950725.github.io</a></p>
+        </div>
+    </div>
+    
+    <input type="checkbox" id="toggle-copyright" class="hidden-toggle" checked>
+    <div class="mac-window" id="window-copyright">
+        <div class="window-title-bar"><label for="toggle-copyright" class="window-close-box"></label>Copyright.txt</div>
+        <div class="window-content">
+            <span style="font-weight: bold;">版權</span> <span style="font-size: 0.8rem;">© 2025 BoPei.</span>
+        </div>
+    </div>
+
+    <input type="checkbox" id="toggle-projects-group" class="hidden-toggle" checked>
+    
+    <div class="mac-window" id="window-proj1">
+        <div class="window-title-bar"><label for="toggle-projects-group" class="window-close-box"></label>Project_1.folder</div>
+        <div class="window-content">
+            <h2>專案經歷 (1)</h2>
+            <div class="exp-item">
+                <img src="https://via.placeholder.com/180x90" alt="專案圖片">
+                <p>[專案/工作 描述 1]</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mac-window" id="window-proj2">
+        <div class="window-title-bar"><label for="toggle-projects-group" class="window-close-box"></label>Project_2.folder</div>
+        <div class="window-content">
+            <h2>專案經歷 (2)</h2>
+            <div class="exp-item">
+                <img src="https://via.placeholder.com/180x90" alt="專案圖片">
+                <p>[專案/工作 描述 2]</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="mac-window" id="window-proj3">
+        <div class="window-title-bar"><label for="toggle-projects-group" class="window-close-box"></label>Project_3.folder</div>
+        <div class="window-content">
+            <h2>專案經歷 (3)</h2>
+            <div class="exp-item">
+                <img src="https://via.placeholder.com/180x90" alt="專案圖片">
+                <p>[專案/工作 描述 3]</p>
+            </div>
+        </div>
+    </div>
+
+
+    <nav class="mac-dock">
+        <label for="toggle-about" class="dock-item">
+            <div class="icon-image-user"></div><span class="icon-label">About</span>
+        </label>
+        <label for="toggle-skills" class="dock-item">
+            <div class="icon-image-gear"></div><span class="icon-label">Skills</span>
+        </label>
         
-        <header class="terminal-header">
-            <div class="header-buttons">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
-            </div>
-            <div class="header-title">Patrick - Portfolio</div>
-        </header>
+        <label for="toggle-projects-group" class="dock-item">
+            <div class="icon-image-folder-main"></div><span class="icon-label">Proj 1</span>
+        </label>
+        <label for="toggle-projects-group" class="dock-item">
+            <div class="icon-image-folder-main"></div><span class="icon-label">Proj 2</span>
+        </label>
+        <label for="toggle-projects-group" class="dock-item">
+            <div class="icon-image-folder-main"></div><span class="icon-label">Proj 3</span>
+        </label>
+        
+        <label for="toggle-photo" class="dock-item">
+            <div class="icon-image-camera"></div><span class="icon-label">Photo</span>
+        </label>
+        <label for="toggle-contact" class="dock-item">
+            <div class="icon-image-contact"></div><span class="icon-label">Contact</span>
+        </label>
+        <label for="toggle-copyright" class="dock-item">
+            <div class="icon-image-copyright"></div><span class="icon-label">Legal</span>
+        </label>
+    </nav>
 
-        <section id="terminal-body">
-            
-            <div class="terminal-output">
-                <pre>
-  _______  _______ _________ _______ _________ _______  _        _  _______       
-(  ____ )(  ___  )\__   __/(  ____ )\__   __/(  ____ \| \    /\( )(  ____ \      
-| (    )|| (   ) |   ) (   | (    )|   ) (   | (    \/|  \  / /|/ | (    \/      
-| (____)|| (___) |   | |   | (____)|   | |   | |      |  (_/ /    | (_____       
-|  _____)|  ___  |   | |   |     __)   | |   | |      |   _ (     (_____  )      
-| (      | (   ) |   | |   | (\ (      | |   | |      |  ( \ \          ) |      
-| )      | )   ( |   | |   | ) \ \_____) (___| (____/\|  /  \ \   /\____) |      
-|/       |/     \|   )_(   |/   \__/\_______/(_______/|_/    \/   \_______)      
-                                                                                 
- _______  _______  _______ _________ _______  _______  _       _________ _______ 
-(  ____ )(  ___  )(  ____ )\__   __/(  ____ \(  ___  )( \      \__   __/(  ___  )
-| (    )|| (   ) || (    )|   ) (   | (    \/| (   ) || (         ) (   | (   ) |
-| (____)|| |   | || (____)|   | |   | (__    | |   | || |         | |   | |   | |
-|  _____)| |   | ||     __)   | |   |  __)   | |   | || |         | |   | |   | |
-| (      | |   | || (\ (      | |   | (      | |   | || |         | |   | |   | |
-| )      | (___) || ) \ \__   | |   | )      | (___) || (____/\___) (___| (___) |
-|/       (_______)|/   \__/   )_(   |/       (_______)(_______/\_______/(_______)                                                                           
-                </pre>
-                <p>Welcome to Patrick's Interactive Portfolio.</p>
-                <p>Type '<span class="command-highlight">help</span>' to see all available commands.</p>
-                <p>Copyright © 2024 Patrick Liu</p>
-            </div>
-
-        </section>
-
-        <footer class="terminal-footer">
-            <span class="prompt">[patrick@portfolio ~]$</span>
-            <input type="text" id="command-input" class="command-input" autofocus>
-        </footer>
-    </main>
-
-    <script src="assets/main.js"></script>
 </body>
 </html>
