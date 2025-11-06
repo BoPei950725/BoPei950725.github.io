@@ -235,3 +235,50 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
 .icon-image-camera, .icon-image-contact, .icon-image-copyright {
     image-rendering: pixelated;
 }
+@media screen and (max-width: 768px) {
+    body, html {
+        overflow: auto !important;
+        -webkit-font-smoothing: auto;
+        font-smooth: auto;
+    }
+    .mac-window {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        
+        width: 95% !important;
+        height: auto !important;
+        margin: 15px auto;
+        
+        z-index: auto !important;
+    }
+    .window-content {
+        overflow-y: auto; 
+    }
+    .mac-dock {
+        padding: 5px;
+        gap: 3px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .dock-item {
+        width: 45px;
+    }
+    .dock-item .icon-label {
+        font-size: 0.7rem;
+    }
+    .profile-pic-inline {
+        float: none;
+        display: block;
+        margin: 0 auto 10px;
+        width: 100px;
+    }
+    .exp-item {
+        flex-direction: column;
+    }
+    .exp-item img {
+        width: 100%;
+    }
+}
