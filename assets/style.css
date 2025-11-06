@@ -235,6 +235,7 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
 .icon-image-camera, .icon-image-contact, .icon-image-copyright {
     image-rendering: pixelated;
 }
+
 @media screen and (max-width: 1400px) {
 
     body, html {
@@ -264,6 +265,11 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
         border-radius: 0; 
         
         z-index: auto !important;
+
+        /* 視窗高度設為 auto，它會自己長高
+          這就是「內部捲軸」會消失的原因
+        */
+        height: auto !important;
     }
     
     .window-content img {
@@ -280,9 +286,9 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
     #window-contact { order: 7; }
     #window-copyright { order: 8; }
     
-    .window-content {
-        overflow-y: auto; 
-    }
+    /* (上一版 "window-content" 的規則已移除)
+      我們讓它回歸預設，被 height: auto 撐開
+    */
     
     .mac-dock {
         position: relative;
