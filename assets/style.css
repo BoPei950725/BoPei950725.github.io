@@ -235,7 +235,7 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
 .icon-image-camera, .icon-image-contact, .icon-image-copyright {
     image-rendering: pixelated;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1400px) {
 
     body, html {
         overflow: auto !important;
@@ -245,7 +245,7 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
         display: flex;
         flex-direction: column;
         align-items: center;
-
+        
         font-size: 1.1em; 
     }
 
@@ -255,10 +255,10 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
         left: auto !important;
         right: auto !important;
         bottom: auto !important;
-
+        
         width: 100% !important; 
         margin: 10px 0;
-
+        
         border-left: none;
         border-right: none;
         border-radius: 0; 
@@ -270,6 +270,7 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
         max-width: 100%;
         height: auto;
     }
+    
     #window-about { order: 1; }
     #window-skills { order: 2; }
     #window-proj1 { order: 3; }
@@ -283,7 +284,6 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
         overflow-y: auto; 
     }
     
-    /* Dock (懸浮頁面) 的修改 (不變) */
     .mac-dock {
         position: relative;
         bottom: auto;
