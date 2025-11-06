@@ -235,12 +235,18 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
 .icon-image-camera, .icon-image-contact, .icon-image-copyright {
     image-rendering: pixelated;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1500px) {
+
     body, html {
         overflow: auto !important;
         -webkit-font-smoothing: auto;
         font-smooth: auto;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
+
     .mac-window {
         position: relative !important;
         top: auto !important;
@@ -250,13 +256,25 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
         
         width: 95% !important;
         height: auto !important;
-        margin: 15px auto;
+        margin: 15px 0;
         
         z-index: auto !important;
     }
+    
+    #window-about { order: 1; }
+    #window-skills { order: 2; }
+    #window-proj1 { order: 3; }
+    #window-proj2 { order: 4; }
+    #window-proj3 { order: 5; }
+    #window-photo { order: 6; }
+    #window-contact { order: 7; }
+    #window-copyright { order: 8; }
+    
+
     .window-content {
         overflow-y: auto; 
     }
+    
     .mac-dock {
         padding: 5px;
         gap: 3px;
@@ -269,12 +287,14 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
     .dock-item .icon-label {
         font-size: 0.7rem;
     }
+    
     .profile-pic-inline {
         float: none;
         display: block;
         margin: 0 auto 10px;
         width: 100px;
     }
+    
     .exp-item {
         flex-direction: column;
     }
