@@ -191,10 +191,10 @@ body, html {
     animation-delay: 0.2s; 
 }
 
-@keyframes fill-java { from { width: 0; } to { width: 80%; } }
-@keyframes fill-python { from { width: 0; } to { width: 70%; } }
+@keyframes fill-java { from { width: 0; } to { width: 85%; } }
+@keyframes fill-python { from { width: 0; } to { width: 90%; } }
 @keyframes fill-c { from { width: 0; } to { width: 50%; } }
-@keyframes fill-html { from { width: 0; } to { width: 90%; } }
+@keyframes fill-html { from { width: 0; } to { width: 70%; } }
 
 #fill-java { animation-name: fill-java; }
 #fill-python { animation-name: fill-python; }
@@ -235,7 +235,7 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
 .icon-image-camera, .icon-image-contact, .icon-image-copyright {
     image-rendering: pixelated;
 }
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1024px) {
 
     body, html {
         overflow: auto !important;
@@ -245,6 +245,8 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        font-size: 1.1em; 
     }
 
     .mac-window {
@@ -253,14 +255,21 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
         left: auto !important;
         right: auto !important;
         bottom: auto !important;
-        
-        width: 95% !important;
-        height: auto !important;
-        margin: 15px 0;
+
+        width: 100% !important; 
+        margin: 10px 0;
+
+        border-left: none;
+        border-right: none;
+        border-radius: 0; 
         
         z-index: auto !important;
     }
     
+    .window-content img {
+        max-width: 100%;
+        height: auto;
+    }
     #window-about { order: 1; }
     #window-skills { order: 2; }
     #window-proj1 { order: 3; }
@@ -270,17 +279,26 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
     #window-contact { order: 7; }
     #window-copyright { order: 8; }
     
-
     .window-content {
         overflow-y: auto; 
     }
     
+    /* Dock (懸浮頁面) 的修改 (不變) */
     .mac-dock {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        
+        order: 99;
+        margin: 10px 0 20px 0;
+
         padding: 5px;
         gap: 3px;
         flex-wrap: wrap;
         justify-content: center;
     }
+
     .dock-item {
         width: 45px;
     }
