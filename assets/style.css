@@ -236,17 +236,14 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
     image-rendering: pixelated;
 }
 
-@media screen and (max-width: 1400px) {
-
+@media (pointer: coarse), (max-width: 1024px) {
     body, html {
         overflow: auto !important;
         -webkit-font-smoothing: auto;
         font-smooth: auto;
-        
         display: flex;
         flex-direction: column;
-        align-items: center;
-        
+        align-items: center; 
         font-size: 1.1em; 
     }
 
@@ -256,22 +253,22 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
         left: auto !important;
         right: auto !important;
         bottom: auto !important;
-        
-        width: 100% !important; 
         margin: 10px 0;
-        
-        border-left: none;
-        border-right: none;
-        border-radius: 0; 
-        
         z-index: auto !important;
-
-        /* 視窗高度設為 auto，它會自己長高
-          這就是「內部捲軸」會消失的原因
-        */
         height: auto !important;
     }
     
+    #window-about,
+    #window-skills,
+    #window-proj1,
+    #window-proj2,
+    #window-proj3,
+    #window-photo,
+    #window-contact,
+    #window-copyright {
+        width: 95% !important;
+    }
+
     .window-content img {
         max-width: 100%;
         height: auto;
@@ -286,43 +283,45 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
     #window-contact { order: 7; }
     #window-copyright { order: 8; }
     
-    /* (上一版 "window-content" 的規則已移除)
-      我們讓它回歸預設，被 height: auto 撐開
-    */
-    
     .mac-dock {
         position: relative;
         bottom: auto;
         left: auto;
         transform: none;
-        
         order: 99;
         margin: 10px 0 20px 0;
-
         padding: 5px;
         gap: 3px;
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    .dock-item {
-        width: 45px;
-    }
-    .dock-item .icon-label {
-        font-size: 0.7rem;
-    }
-    
+    .dock-item { width: 45px; }
+    .dock-item .icon-label { font-size: 0.7rem; }
     .profile-pic-inline {
         float: none;
         display: block;
         margin: 0 auto 10px;
         width: 100px;
     }
+    .exp-item { flex-direction: column; }
+    .exp-item img { width: 100%; }
+}
+
+@media (max-width: 768px) {
     
-    .exp-item {
-        flex-direction: column;
+    #window-about,
+    #window-skills,
+    #window-proj1,
+    #window-proj2,
+    #window-proj3,
+    #window-photo,
+    #window-contact,
+    #window-copyright {
+        width: 98% !important;
     }
-    .exp-item img {
-        width: 100%;
+
+    body, html {
+        font-size: 1.0em;
     }
 }
