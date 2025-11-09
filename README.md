@@ -24,7 +24,7 @@
 ### HTML5
 
 * **語意化標籤 (Semantic HTML)：**
-    * 根據老師的作業要求，使用 `<header>` (頂部選單列), `<nav>` (底部 Dock), `<section>` (個人資訊), `<article>` (專案經歷), `<aside>` (程式能力), 和 `<footer>` (版權) 來建構頁面。
+    * 使用 `<header>` (頂部選單列), `<nav>` (底部 Dock), `<section>` (個人資訊), `<article>` (專案經歷), `<aside>` (程式能力), 和 `<footer>` (版權) 來建構頁面。
 * **Checkbox Hack：**
     * 利用 `<input type="checkbox" class="hidden-toggle">` 搭配 `<label>` (Dock 上的圖示) 和 CSS 的「一般兄弟層選擇器 (`~`)」來控制 `.mac-window` 的 `opacity` 和 `transform` 屬性，實現視窗的開關動畫。
 
@@ -41,7 +41,7 @@
     * `Google Fonts`: 引入 `DotGothic16` 像素字體，營造整體的復古顆粒感。
     * `background-image: repeating-linear-gradient(...)`: 用於製作背景的 2px 仿 Dither 抖動圖樣。
     * `box-shadow`: 製作視窗和 Dock 的 3D 陰影效果。
-    * `image-rendering: pixelated;`: 確保所有圖片（未來如果使用）在放大時保持像素風格，而不是變得模糊。
+    * `image-rendering: pixelated;`: 確保所有圖片在放大時保持像素風格，而不是變得模糊。
 
 ---
 
