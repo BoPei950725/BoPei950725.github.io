@@ -2,6 +2,8 @@
 
 這是一個使用純 HTML 和 CSS 打造的個人履歷網頁，其視覺靈感來自 1990 年代的 Macintosh Classic (System 7) 復古作業系統介面。
 
+### 🔗 [點此查看線上 DEMO](https://bopei950725.github.io/)
+
 ---
 
 ## 🚀 功能特色
