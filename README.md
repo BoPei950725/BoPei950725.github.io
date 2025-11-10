@@ -1,53 +1,65 @@
-# 復古 Macintosh 風格履歷網頁 (Retro Mac-Style Resume)
+# Macintosh 復古風格履歷網站
 
-這是一個使用純 HTML 和 CSS 打造的個人履歷網頁，其視覺靈感來自 1990 年代的 Macintosh Classic (System 7) 復古作業系統介面。
+這是一個個人履歷網站，其設計靈感來自於經典的 Macintosh 復古作業系統介面。
 
-### 🔗 [點此查看線上 DEMO](https://bopei950725.github.io/)
+本專案使用純 HTML 和 CSS 打造，模擬了多視窗、彈出視窗和底部 Dock 欄的視覺與互動體驗。
+
+[請在此處插入您的網站截圖]
 
 ---
 
 ## 🚀 功能特色
 
-* **復古桌面介面：** 模擬經典 Mac OS 的視窗、頂部選單列 (Menu Bar) 和底部的 Dock。
-* **可互動的視窗：**
-    * 使用純 CSS 的 "Checkbox Hack" 技巧，無需 JavaScript 即可實現點擊 Dock 圖示來開啟/關閉對應的視窗。
-    * 視窗標題列的關閉按鈕同樣綁定 Checkbox，可關閉視窗。
-* **RWD 響應式設計：** 專案包含三種主要的版面佈局：
-    1.  **大螢幕 (Desktop > 1512px)：** 完整的桌面體驗。使用 `position: absolute` 定位所有視窗，並透過一個 `1512px` 寬的容器 (`.desktop-area`) 將整體版面在 2K/4K 大螢幕上置中。
-    2.  **直向手機 (Portrait)：** 介面轉換為單欄、全寬的垂直列表。使用 CSS Flexbox 的 `order` 屬性重新排列內容順序，確保閱讀邏輯通順（例如將「聯絡我」和「版權」移至最下方）。
-    3.  **橫向平板/手機 (Landscape)：** 採用 CSS Grid 重新排版。將內容分為兩欄式佈局，並將「專案經歷」等項目設為全寬，以達到最佳的閱讀體驗。
+* **復古視覺**：模仿經典 Mac OS 介面，包含視窗標題欄、關閉按鈕和像素字體 (`DotGothic16`)。
+* **純 CSS 互動**：全站**不使用任何 JavaScript**。所有的互動，包括：
+    * 透過 Dock 欄「開啟」與「關閉」視窗。
+    * 點擊視窗彈出「Modal 彈窗」。
+    * ...均使用 HTML 的 `<input type="checkbox">` 和 `<label>` 技巧達成。
+* **動態圖表**：在「程式能力」彈窗中，使用純 CSS 動畫實現的動態圓餅圖和直條圖。
+* **完整響應式設計 (RWD)**：針對三種主要的瀏覽情境提供完全不同的佈局。
+
+## 🖥️ 響應式佈局 (RWD)
+
+本網站針對不同裝置提供了三種獨特的佈局：
+
+1.  **電腦版 (Desktop > 1024px):**
+    * 完整的桌面體驗，所有視窗均為絕對定位，模擬真實作業系統的隨機擺放感。
+
+2.  **橫向平板 (Landscape Tablet <= 1024px):**
+    * 客製化的網格佈局，內容依序排列為：
+        * 2x2 網格（個人、技能、攝影、聯絡）
+        * 3x1 垂直堆疊（專案 1, 2, 3）
+        * 置中的版權視窗
+
+3.  **直向平板/手機 (Portrait <= 1024px):**
+    * 單欄垂直堆疊佈局，將所有視窗轉換為易於滾動閱讀的卡片。
+
+## 🛠️ 技術堆疊
+
+* **HTML5**
+* **CSS3**
+    * Flexbox
+    * CSS Grid (用於橫向平板佈局)
+    * Media Queries (媒體查詢)
+    * CSS Animation (動畫)
+    * CSS `@property` (用於圓餅圖動畫)
+* **Google Fonts**
+    * `DotGothic16`
 
 ---
 
-## 🛠️ 使用技術
+## 👨‍💻 作者
 
-這個專案**完全**只使用了 `HTML5` 和 `CSS3`，沒有使用任何 JavaScript。
+* **BoPei (劉柏霈)**
 
-### HTML5
+## ⚠️ 專案聲明
 
-* **語意化標籤 (Semantic HTML)：**
-    * 使用 `<header>` (頂部選單列), `<nav>` (底部 Dock), `<section>` (個人資訊), `<article>` (專案經歷), `<aside>` (程式能力), 和 `<footer>` (版權) 來建構頁面。
-* **Checkbox Hack：**
-    * 利用 `<input type="checkbox" class="hidden-toggle">` 搭配 `<label>` (Dock 上的圖示) 和 CSS 的「一般兄弟層選擇器 (`~`)」來控制 `.mac-window` 的 `opacity` 和 `transform` 屬性，實現視窗的開關動畫。
+本專案的所有程式碼（HTML 結構與 CSS 樣式）均由作者 **BoPei** 親自編寫。
 
-### CSS3
+在開發過程中，曾使用 AI (GPT) 協助進行程式碼的整理、優化建議以及故障排除。
 
-* **版面佈局 (Layout)：**
-    * `position: absolute`: 用於建構核心的桌面版面，允許視窗自由拖曳（未來可擴充）和重疊。
-    * `CSS Flexbox`: 用於「直向手機」版面 (`orientation: portrait`)，透過 `flex-direction: column` 和 `order` 屬性來控制內容的垂直排列順序。
-    * `CSS Grid`: 用於「橫向平板」版面 (`orientation: landscape`)，建立 `grid-template-columns: 2fr 1fr;` 的兩欄式佈局，並透過 `grid-column: 1 / 3;` 讓特定項目（如專案經歷）橫跨全寬。
-* **響應式設計 (RWD)：**
-    * `@media (max-width: ...)`: 偵測裝置寬度。
-    * `@media (orientation: ...)`: 偵測裝置是「直向」(portrait) 還是「橫向」(landscape)，並根據不同方向套用完全不同的版面邏輯。
-* **視覺風格：**
-    * `Google Fonts`: 引入 `DotGothic16` 像素字體，營造整體的復古顆粒感。
-    * `background-image: repeating-linear-gradient(...)`: 用於製作背景的 2px 仿 Dither 抖動圖樣。
-    * `box-shadow`: 製作視窗和 Dock 的 3D 陰影效果。
-    * `image-rendering: pixelated;`: 確保所有圖片在放大時保持像素風格，而不是變得模糊。
+此份 `README.md` 文件由 AI (GPT) 協助生成。
 
----
+## 📄 授權 (License)
 
-## ⚙️ 如何使用
-
-1.  Chrome (下載) 本專案。
-2.  直接在任何現代瀏覽器中開啟 `index.html` 檔案即可。
+This project is licensed under the MIT License.
