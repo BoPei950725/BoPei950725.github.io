@@ -9,14 +9,14 @@
 </head>
 <body>
 
-    <div class="mac-menu-bar">
+    <header class="mac-menu-bar">
         <span>File</span> <span>Edit</span> <span>View</span> <span>Special</span>
-    </div>
+    </header>
 
     <div class="desktop-area">
 
         <input type="checkbox" id="toggle-about" class="hidden-toggle" checked>
-        <div class="mac-window" id="window-about">
+        <section class="mac-window" id="window-about">
             <div class="window-title-bar"><label for="toggle-about" class="window-close-box"></label>About_Me.txt</div>
             <div class="window-content">
                 <img src="https://via.placeholder.com/80" alt="頭像" class="profile-pic-inline">
@@ -25,10 +25,10 @@
                 <p><strong>學校:</strong> [您的學校]</p>
                 <p><strong>自我介紹:</strong> [您的自我介紹...]</p>
             </div>
-        </div>
+        </section>
 
         <input type="checkbox" id="toggle-skills" class="hidden-toggle" checked>
-        <div class="mac-window" id="window-skills">
+        <aside class="mac-window" id="window-skills">
             <div class="window-title-bar"><label for="toggle-skills" class="window-close-box"></label>Skills.app</div>
             <div class="window-content">
                 <h2>程式能力</h2>
@@ -49,10 +49,10 @@
                     <div class="progress-bar"><div class="progress-fill" id="fill-html"></div></div>
                 </div>
             </div>
-        </div>
+        </aside>
         
         <input type="checkbox" id="toggle-photo" class="hidden-toggle" checked>
-        <div class="mac-window" id="window-photo">
+        <article class="mac-window" id="window-photo">
             <div class="window-title-bar"><label for="toggle-photo" class="window-close-box"></label>Photography.folder</div>
             <div class="window-content">
                 <h2>攝影社幹部經歷</h2>
@@ -61,29 +61,29 @@
                     <p>[攝影社 描述]</p>
                 </div>
             </div>
-        </div>
+        </article>
         
         <input type="checkbox" id="toggle-contact" class="hidden-toggle" checked>
-        <div class="mac-window" id="window-contact">
+        <aside class="mac-window" id="window-contact">
             <div class="window-title-bar"><label for="toggle-contact" class="window-close-box"></label>Contact.app</div>
             <div class="window-content">
                 <h2>聯絡我</h2>
                 <p>Email: <a href="mailto:950725bopei@gmail.com">950725bopei@gmail.com</a></p>
-                <p>GitHub: <a href="https://github.com/BoPei950725" target="_blank">BoPei950725's Github Projects</a></p>
+                <p>GitHub: <a href="https://bopei950725.github.io" target="_blank">https://bopei950725.github.io</a></p>
             </div>
-        </div>
+        </aside>
         
         <input type="checkbox" id="toggle-copyright" class="hidden-toggle" checked>
-        <div class="mac-window" id="window-copyright">
+        <footer class="mac-window" id="window-copyright">
             <div class="window-title-bar"><label for="toggle-copyright" class="window-close-box"></label>Copyright.txt</div>
             <div class="window-content">
                 <span style="font-weight: bold;">版權</span> <span style="font-size: 0.8rem;">© 2025 BoPei.</span>
             </div>
-        </div>
+        </footer>
 
         <input type="checkbox" id="toggle-projects-group" class="hidden-toggle" checked>
         
-        <div class="mac-window" id="window-proj1">
+        <article class="mac-window" id="window-proj1">
             <div class="window-title-bar"><label for="toggle-projects-group" class="window-close-box"></label>Project_1.folder</div>
             <div class="window-content">
                 <h2>專案經歷 (1)</h2>
@@ -92,9 +92,9 @@
                     <p>[專案/工作 描述 1]</p>
                 </div>
             </div>
-        </div>
+        </article>
         
-        <div class="mac-window" id="window-proj2">
+        <article class="mac-window" id="window-proj2">
             <div class="window-title-bar"><label for="toggle-projects-group" class="window-close-box"></label>Project_2.folder</div>
             <div class="window-content">
                 <h2>專案經歷 (2)</h2>
@@ -103,9 +103,9 @@
                     <p>[專案/工作 描述 2]</p>
                 </div>
             </div>
-        </div>
+        </article>
 
-        <div class="mac-window" id="window-proj3">
+        <article class="mac-window" id="window-proj3">
             <div class="window-title-bar"><label for="toggle-projects-group" class="window-close-box"></label>Project_3.folder</div>
             <div class="window-content">
                 <h2>專案經歷 (3)</h2>
@@ -114,11 +114,9 @@
                     <p>[專案/工作 描述 3]</p>
                 </div>
             </div>
-        </div>
-
-    </div>
-
-    <nav class="mac-dock">
+        </article>
+    
+    </div><nav class="mac-dock">
         <label for="toggle-about" class="dock-item">
             <div class="icon-image-user"></div><span class="icon-label">About</span>
         </label>
