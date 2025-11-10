@@ -32,7 +32,7 @@ body, html {
 .desktop-area {
     position: relative;
     width: 1512px; 
-    height: 750px;
+    height: 750px; 
     margin: 0px auto;
 }
 
@@ -118,26 +118,26 @@ body, html {
 #window-proj3 { 
     width: 470px; 
     height: 250px; 
-    top: 300px;  
+    top: 290px;  
     left: 500px; 
     z-index: 103; 
 }
 #window-photo { 
-    top: 320px; /* <-- 已修改 (原 bottom: 80px) */
+    top: 320px; 
     left: 50px; 
     width: 420px; 
     height: 315px;
     z-index: 101; 
 }
 #window-copyright {
-    top: 560px; /* <-- 已修改 (原 bottom: 100px) */
+    top: 560px; 
     left: 560px; 
     width: 350px; 
     height: 70px; 
     z-index: 104; 
 }
 #window-contact { 
-    top: 540px; /* <-- 已修改 (原 bottom: 20px) */
+    top: 540px; 
     right: 150px; 
     width: 300px;
     height: 180px;
@@ -478,3 +478,9 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
     }
 }
 
+
+@media (min-width: 1513px) {
+    .desktop-area {
+        margin-bottom: 80px;
+    }
+}
