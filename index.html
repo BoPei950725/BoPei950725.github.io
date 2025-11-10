@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macintosh OS Resume made by BoPei</title>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="mac-menu-bar">
+        <span>File</span> <span>Edit</span> <span>View</span> <span>Special</span>
+    </header>
+
+    <div class="desktop-area">
+
+        <input type="checkbox" id="modal-toggle-about" class="hidden-toggle">
+        <input type="checkbox" id="modal-toggle-skills" class="hidden-toggle">
+        <input type="checkbox" id="modal-toggle-photo" class="hidden-toggle">
+        <input type="checkbox" id="modal-toggle-proj1" class="hidden-toggle">
+        <input type="checkbox" id="modal-toggle-proj2" class="hidden-toggle">
+        <input type="checkbox" id="modal-toggle-proj3" class="hidden-toggle">
+
+
+        <input type="checkbox" id="toggle-about" class="hidden-toggle" checked>
+        <label for="modal-toggle-about" class="project-trigger-label" id="about-trigger-label">
+            <section class="mac-window" id="window-about">
+                <div class="window-title-bar"><label for="toggle-about" class="window-close-box"></label>About_Me.txt</div>
+                <div class="window-content">
+                    <img src="image/avatar.jpg" alt="頭像" class="profile-pic-inline">
+                    <h2>個人基本資訊</h2>
+                    <strong>姓名:</strong> 波沛 | 劉柏霈<br>
+                    <strong>學校:</strong>中原大學ChungYuan Christian University<br>
+                    <strong>自我介紹:</strong><p style="font-size:small;">Never trust a computer you can't throw out a window.</p>
+                    
+                </div>
+            </section>
+        </label>
+
+        <input type="checkbox" id="toggle-skills" class="hidden-toggle" checked>
+        <label for="modal-toggle-skills" class="project-trigger-label" id="skills-trigger-label">
+            <aside class="mac-window" id="window-skills">
+                <div class="window-title-bar"><label for="toggle-skills" class="window-close-box"></label>Skills.app</div>
+                <div class="window-content">
+                    <h2>程式能力</h2>
+                    <div class="skill-item">
+                        <span class="skill-name">Java</span>
+                        <div class="progress-bar"><div class="progress-fill" id="fill-java"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Python</span>
+                        <div class="progress-bar"><div class="progress-fill" id="fill-python"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">C</span>
+                        <div class="progress-bar"><div class="progress-fill" id="fill-c"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">HTML/CSS</span>
+                        <div class="progress-bar"><div class="progress-fill" id="fill-html"></div></div>
+                    </div>
+                </div>
+            </aside>
+        </label>
+        
+        <input type="checkbox" id="toggle-photo" class="hidden-toggle" checked>
+        <label for="modal-toggle-photo" class="project-trigger-label" id="photo-trigger-label">
+            <article class="mac-window" id="window-photo">
+                <div class="window-title-bar"><label for="toggle-photo" class="window-close-box"></label>Photography.folder</div>
+                <div class="window-content">
+                    <h2>攝影經歷</h2>
+                    <div class="photo-slideshow">
+                        <img src="image/1.jpg" alt="攝影作品 1">
+                        <img src="image/2.jpg" alt="攝影作品 2">
+                        <img src="image/3.jpg" alt="攝影作品 3">
+                        <img src="image/4.jpg" alt="攝影作品 4">
+                        <img src="image/5.jpg" alt="攝影作品 5">
+                        <img src="image/6.jpg" alt="攝影作品 6">
+                        <img src="image/7.jpg" alt="攝影作品 7">
+                        <img src="image/8.jpg" alt="攝影作品 8">
+                    </div>
+                    <p>從社團教學到個人創作。這些照片精選了我在攝影社的教學時光，以及我對城市光影與追焦攝影的熱情。</p>
+                </div>
+            </article>
+        </label>
+        
+        <input type="checkbox" id="toggle-contact" class="hidden-toggle" checked>
+        <aside class="mac-window" id="window-contact">
+            <div class="window-title-bar"><label for="toggle-contact" class="window-close-box"></label>Contact.app</div>
+            <div class="window-content">
+                <h2>聯絡我</h2>
+                <p>Email: <a href="mailto:950725bopei@gmail.com">950725bopei@gmail.com</a></p>
+                <p>GitHub: <a href="https://github.com/BoPei950725" target="_blank">Github-BoPei950725</a></p>
+            </div>
+        </aside>
+        
+        <input type="checkbox" id="toggle-copyright" class="hidden-toggle" checked>
+        <footer class="mac-window" id="window-copyright">
+            <div class="window-title-bar"><label for="toggle-copyright" class="window-close-box"></label>Copyright.txt</div>
+            <div class="window-content">
+                <span style="font-weight: bold;">版權 © 2025 BoPei. 保留所有權利。</span> <span style="font-size: 0.8rem;"></span>
+            </div>
+        </footer>
+
+        <input type="checkbox" id="toggle-projects-group" class="hidden-toggle" checked>
+        
+        <label for="modal-toggle-proj1" class="project-trigger-label">
+            <article class="mac-window" id="window-proj1">
+                <div class="window-title-bar"><label for="toggle-projects-group" class="window-close-box"></label>Project_1.folder</div>
+                <div class="window-content">
+                    <h2>TurtleBot SLAM</h2>
+                    <div class="exp-item">
+                        <img src="image/pj1.png" alt="TurtleBot 專案縮圖">
+                        <p>使用TurtleBot 2機器人，在 ROS (Robot Operating System)環境中...</p>
+                    </div>
+                </div>
+            </article>
+        </label>
+        
+        <label for="modal-toggle-proj2" class="project-trigger-label">
+            <article class="mac-window" id="window-proj2">
+                <div class="window-title-bar"><label for="toggle-projects-group" class="window-close-box"></label>Project_2.folder</div>
+                <div class="window-content">
+                    <h2>Robotic Arm</h2>
+                     <div class="exp-item">
+                        <img src="image/pj2.png" alt="Robotic Arm 專案縮圖">
+                        <p>六軸機械手臂的「Pick and Place」專案...</p>
+                    </div>
+                </div>
+            </article>
+        </label>
+
+        <label for="modal-toggle-proj3" class="project-trigger-label">
+            <article class="mac-window" id="window-proj3">
+                <div class="window-title-bar"><label for="toggle-projects-group" class="window-close-box"></label>Project_3.folder</div>
+                <div class="window-content">
+                    <h2>智慧門鈴</h2>
+                    <div class="exp-item">
+                        <img src="image/project3.jpg" alt="智慧門鈴專案實體照">
+                        <p>這是我 3D 列印並組裝的智慧門鈴系統...</p>
+                    </div>
+                </div>
+            </article>
+        </label>
+
+
+        <label for="modal-toggle-proj1" class="project-modal-overlay"></label>
+        <div class="project-modal" id="modal-proj1">
+            <label for="modal-toggle-proj1" class="modal-close-btn">&times;</label>
+            <div class="modal-content">
+                <h2>TurtleBot SLAM</h2>
+                <video src="video/project1.mp4" controls autoplay loop muted playsinline></video>
+                <p>使用 TurtleBot 2 機器人，在 ROS (Robot Operating System) 環境中，透過 LIDAR 感測器即時建立 2D 空間地圖 (SLAM)。這個專案展示了我在機器人導航與環境感知方面的實作能力。</p>
+            </div>
+        </div>
+
+        <label for="modal-toggle-proj2" class="project-modal-overlay"></label>
+        <div class="project-modal" id="modal-proj2">
+            <label for="modal-toggle-proj2" class="modal-close-btn">&times;</label>
+            <div class="modal-content">
+                <h2>Robotic Arm</h2>
+                <video src="video/project2.mp4" controls autoplay loop muted playsinline></video>
+                <p>六軸機械手臂的「Pick and Place」專案，編程控制手臂精確移動，並成功夾取與放置目標物體。此專案專注於運動學控制與自動化流程的實作。</p>
+            </div>
+        </div>
+
+        <label for="modal-toggle-proj3" class="project-modal-overlay"></label>
+        <div class="project-modal" id="modal-proj3">
+            <label for="modal-toggle-proj3" class="modal-close-btn">&times;</label>
+            <div class="modal-content">
+                <h2>智慧門鈴</h2>
+                <img src="image/project3.jpg" alt="智慧門鈴專案實體照">
+                <p>這是我 3D 列印並組裝的智慧門鈴系統。它透過網路連接，並整合了 Home Assistant 平台。當門鈴觸發或偵測到訪客時，它可以執行自動化流程，例如播放自訂提示音或發送即時通知。</p>
+            </div>
+        </div>
+
+        <label for="modal-toggle-about" class="project-modal-overlay"></label>
+        <div class="project-modal" id="modal-about">
+            <label for="modal-toggle-about" class="modal-close-btn">&times;</label>
+            <div class="modal-content">
+                <img src="image/avatar.jpg" alt="頭像" class="profile-pic-inline">
+                <h2>個人基本資訊</h2>
+                <strong>姓名:</strong> 波沛 | 劉柏霈<br>
+                <strong>學校:</strong>中原大學ChungYuan Christian University<br>
+                <strong>自我介紹:</strong><p style="font-size:small;">Never trust a computer you can't throw out a window.</p>
+            </div>
+        </div>
+
+        <label for="modal-toggle-photo" class="project-modal-overlay"></label>
+        <div class="project-modal" id="modal-photo">
+            <label for="modal-toggle-photo" class="modal-close-btn">&times;</label>
+            <div class="modal-content">
+                <h2>攝影經歷</h2>
+                <div class="photo-slideshow">
+                    <img src="image/1.jpg" alt="攝影作品 1">
+                    <img src="image/2.jpg" alt="攝影作品 2">
+                    <img src="image/3.jpg" alt="攝影作品 3">
+                    <img src="image/4.jpg" alt="攝影作品 4">
+                    <img src="image/5.jpg" alt="攝影作品 5">
+                    <img src="image/6.jpg" alt="攝影作品 6">
+                    <img src="image/7.jpg" alt="攝影作品 7">
+                    <img src="image/8.jpg" alt="攝影作品 8">
+                </div>
+                <p>從社團教學到個人創作。這些照片精選了我在攝影社的教學時光，以及我對城市光影與追焦攝影的熱情。</p>
+            </div>
+        </div>
+
+        <label for="modal-toggle-skills" class="project-modal-overlay"></label>
+        <div class="project-modal" id="modal-skills">
+            <label for="modal-toggle-skills" class="modal-close-btn">&times;</label>
+            <div class="modal-content modal-skills-content">
+                <h2>程式能力 (視覺化)</h2>
+                
+                <div class="charts-container">
+                    <div class="c-charts-container">
+                        <div class="c-chart">
+                            <div class="c-chart-circle" id="c-java" style="--percent: 80;"></div>
+                            <span class="c-chart-label">Java</span>
+                        </div>
+                        <div class="c-chart">
+                            <div class="c-chart-circle" id="c-python" style="--percent: 95;"></div>
+                             <span class="c-chart-label">Python</span>
+                        </div>
+                        <div class="c-chart">
+                            <div class="c-chart-circle" id="c-c" style="--percent: 40;"></div>
+                             <span class="c-chart-label">C</span>
+                        </div>
+                        <div class="c-chart">
+                            <div class="c-chart-circle" id="c-html" style="--percent: 65;"></div>
+                             <span class="c-chart-label">HTML/CSS</span>
+                        </div>
+                    </div>
+
+                    <div class="v-charts-container">
+                        <div class="v-chart">
+                            <div class="v-chart-bar-wrapper"><div class="v-chart-bar" style="height: 80%;"></div></div>
+                            <span class="v-chart-label">Java</span>
+                        </div>
+                        <div class="v-chart">
+                            <div class="v-chart-bar-wrapper"><div class="v-chart-bar" style="height: 95%;"></div></div>
+                            <span class="v-chart-label">Python</span>
+                        </div>
+                        <div class="v-chart">
+                            <div class="v-chart-bar-wrapper"><div class="v-chart-bar" style="height: 40%;"></div></div>
+                            <span class="v-chart-label">C</span>
+                        </div>
+                        <div class="v-chart">
+                            <div class="v-chart-bar-wrapper"><div class="v-chart-bar" style="height: 65%;"></div></div>
+                            <span class="v-chart-label">HTML/CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-explanations">
+                    <h3>技能說明</h3>
+                    <p><strong>Python:</strong> 熟練掌握，主要用於後端開發 (Flask/Django) 以及數據分析。在多個專案中作為主力語言。</p>
+                    <p><strong>Java:</strong> 具備紮實的物件導向基礎，熟悉 Spring Boot 框架，有大型專案的開發經驗。</p>
+                    <p><strong>HTML/CSS:</strong> 能夠手刻 RWD 響應式網頁，並使用純 CSS 實現如這個作品集的互動效果。</p>
+                    <p><strong>C:</strong> 了解基礎語法與記憶體管理，主要用於學校的演算法與資料結構課程。</p>
+                </div>
+
+            </div>
+        </div>
+
+    
+    </div><nav class="mac-dock">
+        <label for="toggle-about" class="dock-item">
+            <div class="icon-image-user"></div><span class="icon-label">About</span>
+        </label>
+        <label for="toggle-skills" class="dock-item">
+            <div class="icon-image-gear"></div><span class="icon-label">Skills</span>
+        </label>
+        
+        <label for="toggle-projects-group" class="dock-item">
+            <div class="icon-image-folder-main"></div><span class="icon-label">Proj 1</span>
+        </label>
+        <label for="toggle-projects-group" class="dock-item">
+            <div class="icon-image-folder-main"></div><span class="icon-label">Proj 2</span>
+        </label>
+        <label for="toggle-projects-group" class="dock-item">
+            <div class="icon-image-folder-main"></div><span class="icon-label">Proj 3</span>
+        </label>
+        
+        <label for="toggle-photo" class="dock-item">
+            <div class="icon-image-camera"></div><span class="icon-label">Photo</span>
+        </label>
+        <label for="toggle-contact" class="dock-item">
+            <div class="icon-image-contact"></div><span class="icon-label">Contact</span>
+        </label>
+        <label for="toggle-copyright" class="dock-item">
+            <div class="icon-image-copyright"></div><span class="icon-label">Legal</span>
+        </label>
+    </nav>
+
+</body>
+</html>
