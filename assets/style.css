@@ -32,8 +32,8 @@ body, html {
 .desktop-area {
     position: relative;
     width: 1512px; 
-    height: 850px;
-    margin: 40px auto;
+    height: 750px;
+    margin: 0px auto;
 }
 
 .mac-dock {
@@ -69,7 +69,7 @@ body, html {
 .window-content {
     flex: 1; 
     overflow-y: hidden; 
-    padding: 0 15px; 
+    padding: 10px 15px; 
     background: #f0f0f0;
     box-sizing: border-box;
     display: block; 
@@ -85,24 +85,6 @@ body, html {
 #window-proj3 .window-content,
 #window-photo .window-content {
     overflow-y: auto;
-}
-
-#toggle-about:not(:checked) ~ #window-about,
-#toggle-skills:not(:checked) ~ #window-skills,
-#toggle-photo:not(:checked) ~ #window-photo,
-#toggle-contact:not(:checked) ~ #window-contact,
-#toggle-copyright:not(:checked) ~ #window-copyright {
-    opacity: 0;
-    transform: scale(0.8);
-    pointer-events: none;
-}
-
-#toggle-projects-group:not(:checked) ~ #window-proj1,
-#toggle-projects-group:not(:checked) ~ #window-proj2,
-#toggle-projects-group:not(:checked) ~ #window-proj3 {
-    opacity: 0;
-    transform: scale(0.8);
-    pointer-events: none;
 }
 
 #window-about { 
@@ -123,7 +105,7 @@ body, html {
     width: 660px; 
     height: 200px; 
     top: 50px;  
-    right: 420px;
+    right: 420px; 
     z-index: 105; 
 }
 #window-proj2 { 
@@ -141,21 +123,21 @@ body, html {
     z-index: 103; 
 }
 #window-photo { 
-    bottom: 80px; 
+    top: 320px; /* <-- 已修改 (原 bottom: 80px) */
     left: 50px; 
     width: 420px; 
     height: 315px;
     z-index: 101; 
 }
 #window-copyright {
-    bottom: 100px; 
+    top: 560px; /* <-- 已修改 (原 bottom: 100px) */
     left: 560px; 
     width: 350px; 
     height: 70px; 
     z-index: 104; 
 }
 #window-contact { 
-    bottom: 20px; 
+    top: 540px; /* <-- 已修改 (原 bottom: 20px) */
     right: 150px; 
     width: 300px;
     height: 180px;
@@ -229,7 +211,7 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
 }
 
 
-@media (max-width: 1511px) and (orientation: portrait) {
+@media (max-width: 1024px) and (orientation: portrait) {
     body, html {
         overflow: auto !important;
         -webkit-font-smoothing: auto;
@@ -237,7 +219,9 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
         display: flex;
         flex-direction: column;
         align-items: center; 
-        padding: 0; gap: 0; height: auto;
+        padding: 0;
+        gap: 0;
+        height: auto;
     }
 
     .desktop-area {
@@ -245,8 +229,12 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
         width: 100% !important;
         height: auto !important;
         margin: 0 !important;
+        
         display: flex;
         flex-direction: column;
+        
+        padding-bottom: 120px; 
+        box-sizing: border-box;
     }
     
     .desktop-area > .hidden-toggle {
@@ -255,16 +243,58 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
 
     .mac-window {
         position: relative !important;
-        top: auto !important; left: auto !important; right: auto !important; bottom: auto !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
         margin: 10px 0 0 0;
         z-index: auto !important;
         height: auto !important;
+        width: 100% !important; 
+        
         box-sizing: border-box;
         border-left: none;
         border-right: none;
         border-radius: 0;
         box-shadow: none;
+        
+        display: flex;
+        
+        opacity: 1;
+        transform: none;
+        transition: max-height 0.4s ease-out, opacity 0.3s ease-out, margin 0.4s ease-out, border 0.4s ease-out;
+        max-height: 100vh;
+        overflow: hidden;
     }
+    
+    #toggle-about:not(:checked) ~ #window-about,
+    #toggle-skills:not(:checked) ~ #window-skills,
+    #toggle-photo:not(:checked) ~ #window-photo,
+    #toggle-contact:not(:checked) ~ #window-contact,
+    #toggle-copyright:not(:checked) ~ #window-copyright {
+        display: flex;
+        opacity: 0; 
+        transform: none; 
+        pointer-events: none; 
+        max-height: 0 !important;
+        margin: 0;
+        border-top: none;
+        border-bottom: none;
+    }
+
+    #toggle-projects-group:not(:checked) ~ #window-proj1,
+    #toggle-projects-group:not(:checked) ~ #window-proj2,
+    #toggle-projects-group:not(:checked) ~ #window-proj3 {
+        display: flex;
+        opacity: 0;
+        transform: none;
+        pointer-events: none;
+        max-height: 0 !important;
+        margin: 0;
+        border-top: none;
+        border-bottom: none;
+    }
+    
     
     .desktop-area > .mac-window:first-of-type {
         margin-top: 28px;
@@ -279,37 +309,48 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
     #window-contact { order: 7; }
     #window-copyright { order: 8; }
 
-    #window-about,
-    #window-skills,
-    #window-proj1,
-    #window-proj2,
-    #window-proj3,
-    #window-photo,
-    #window-contact,
-    #window-copyright {
-        width: 100% !important;
-        min-height: auto;
-    }
 
-    .window-content img { max-width: 100%; height: auto; }
-    
     .mac-dock {
-        position: relative; bottom: auto; left: auto;
+        position: fixed; 
+        bottom: 0;
+        left: 0;
         transform: none; 
-        order: 99;
-        margin: 10px 0 20px 0; padding: 8px; gap: 5px;
-        flex-wrap: wrap; justify-content: center;
-        width: 100%; box-sizing: border-box;
+        
+        width: 100%;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: auto;
+        padding: 5px;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        z-index: 500;
     }
 
-    .dock-item { width: 50px; }
-    .dock-item .icon-label { font-size: 0.8rem; }
-    .profile-pic-inline { float: none; display: block; margin: 0 auto 10px; width: 100px; }
-    .exp-item { flex-direction: column; }
-    .exp-item img { width: 100%; }
+    .dock-item { width: 48px; }
+    .dock-item .icon-label { font-size: 0.7rem; }
+    
+    .window-content {
+        overflow-y: auto;
+    }
+    .profile-pic-inline { 
+        float: none; 
+        display: block; 
+        margin: 0 auto 10px; 
+        width: 100px;
+    }
+    .exp-item { 
+        flex-direction: column; 
+    }
+    .exp-item img { 
+        width: 100%; 
+        height: auto;
+    }
 }
 
-@media (max-width: 1511px) and (orientation: landscape) {
+
+@media (max-width: 1024px) and (orientation: landscape) {
     body, html {
         overflow: auto !important;
         height: auto;
@@ -337,12 +378,45 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
         height: auto !important;
         width: 100% !important;
         box-sizing: border-box;
-        display: flex !important; 
-        opacity: 1 !important;
-        transform: none !important;
-        pointer-events: auto !important;
+        
+        display: flex; 
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+        
+        transition: max-height 0.4s ease-out, opacity 0.3s ease-out, margin 0.4s ease-out, border 0.4s ease-out;
+        max-height: 100vh;
+        overflow: hidden;
     }
     
+    #toggle-about:not(:checked) ~ #window-about,
+    #toggle-skills:not(:checked) ~ #window-skills,
+    #toggle-photo:not(:checked) ~ #window-photo,
+    #toggle-contact:not(:checked) ~ #window-contact,
+    #toggle-copyright:not(:checked) ~ #window-copyright {
+        display: flex;
+        opacity: 0; 
+        transform: none; 
+        pointer-events: none; 
+        max-height: 0 !important;
+        margin: 0;
+        border-top: none;
+        border-bottom: none;
+    }
+
+    #toggle-projects-group:not(:checked) ~ #window-proj1,
+    #toggle-projects-group:not(:checked) ~ #window-proj2,
+    #toggle-projects-group:not(:checked) ~ #window-proj3 {
+        display: flex;
+        opacity: 0;
+        transform: none;
+        pointer-events: none;
+        max-height: 0 !important;
+        margin: 0;
+        border-top: none;
+        border-bottom: none;
+    }
+
     #window-about { grid-column: 1 / 2; grid-row: 1; }
     #window-skills { grid-column: 2 / 3; grid-row: 1; }
     
@@ -360,10 +434,6 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
         width: 350px !important;
         margin: 10px 0 0 0;
     }
-    
-    .hidden-toggle {
-        display: none !important;
-    }
 
     .mac-dock {
         position: relative;
@@ -373,6 +443,11 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
         margin: 0 15px 20px 15px;
         width: auto;
         justify-content: center;
+        display: flex;
+        background: #fff; border: 2px solid #000;
+        box-shadow: 3px 3px 0px rgba(0,0,0,0.7);
+        padding: 8px; gap: 5px;
+        z-index: 500; border-radius: 6px;
     }
     
     .profile-pic-inline { float: none; display: block; margin: 0 auto 10px; width: 100px; }
@@ -380,11 +455,26 @@ img, .icon-image-user, .icon-image-gear, .icon-image-folder-main,
     .exp-item img { width: 100%; }
 }
 
-@media (min-width: 1512px) {
-    body, html {
-        overflow: auto;
+
+@media (min-width: 1025px) {
+    #toggle-about:not(:checked) ~ #window-about,
+    #toggle-skills:not(:checked) ~ #window-skills,
+    #toggle-photo:not(:checked) ~ #window-photo,
+    #toggle-contact:not(:checked) ~ #window-contact,
+    #toggle-copyright:not(:checked) ~ #window-copyright {
+        display: flex;
+        opacity: 0;
+        transform: scale(0.8);
+        pointer-events: none;
     }
-    .desktop-area {
-        margin-bottom: 80px;
+
+    #toggle-projects-group:not(:checked) ~ #window-proj1,
+    #toggle-projects-group:not(:checked) ~ #window-proj2,
+    #toggle-projects-group:not(:checked) ~ #window-proj3 {
+        display: flex;
+        opacity: 0;
+        transform: scale(0.8);
+        pointer-events: none;
     }
 }
+
